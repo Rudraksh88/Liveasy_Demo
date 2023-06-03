@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LoadRepository extends JpaRepository<Load, Long> {
+    // This method is used to get all the loads of a particular shipper
     List<Load> findAllByShipperId(UUID shipperId);
 }

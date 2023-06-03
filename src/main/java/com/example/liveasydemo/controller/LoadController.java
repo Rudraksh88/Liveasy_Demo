@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/loads")
+@RequestMapping("/api")
 public class LoadController {
     // LoadController class is used to handle all the requests related to Load entity
     private final LoadRepository loadRepository;
@@ -44,7 +44,7 @@ public class LoadController {
     }
 
     // This method is used to get all the loads using loadid and maps to the GET request
-    @GetMapping("/{loadId}")
+    @GetMapping("/load/{loadId}")
     public ResponseEntity<Load> getLoadById(@PathVariable("loadId") Long loadId) {
         // Get the load with the given loadId
         Load load = loadRepository.findById(loadId).orElse(null);
@@ -58,7 +58,7 @@ public class LoadController {
     }
 
     // This method is used to update the details of a particular load and maps to the PUT request
-    @PutMapping("/{loadId}")
+    @PutMapping("/load/{loadId}")
     public ResponseEntity<String> updateLoadById(@PathVariable("loadId") Long loadId, @RequestBody Load updatedLoad) {
         // Get the load with the given loadId
         Load load = loadRepository.findById(loadId).orElse(null);
@@ -81,7 +81,7 @@ public class LoadController {
     }
 
     // This method is used to delete a particular load and maps to the DELETE request
-    @DeleteMapping("/{loadId}")
+    @DeleteMapping("/load/{loadId}")
     public ResponseEntity<String> deleteLoadById(@PathVariable("loadId") Long loadId) {
         // Get the load with the given loadId
         Load load = loadRepository.findById(loadId).orElse(null);

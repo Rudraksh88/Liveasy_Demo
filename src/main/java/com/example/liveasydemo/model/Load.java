@@ -1,36 +1,21 @@
 package com.example.liveasydemo.model;
 
 import jakarta.persistence.*;
-
 import java.util.UUID;
-//import jakarta.persistence.Entity;
-
-//import javax.persistence.Id;
-//import jakarta.persistence.Id;
-// import jakarta.persistence.Id;
 
 @Entity
 public class Load {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int loadid;
-//    @Column(name = "loading_point")
     private String loadingPoint;
-//    @Column(name = "unloading_point")
     private String unloadingPoint;
-//    @Column(name = "product_type")
     private String productType;
-//    @Column(name = "truck_type")
     private String truckType;
-//    @Column(name = "no_of_trucks")
     private int noOfTrucks;
-//    @Column(name = "weight")
     private double weight;
-//    @Column(name = "comment")
     private String comment;
-//    @Column(name = "shipperid")
     private UUID shipperId;
-//    @Column(name = "date")
     private String date;
 
     public Load() {
@@ -40,7 +25,6 @@ public class Load {
     // Constructors, getters, and setters
     public Load(String loadingPoint, String unloadingPoint, String productType, String truckType,
                 int noOfTrucks, double weight, String comment, UUID shipperId, String date) {
-        // this.loadId = loadId;
         this.loadingPoint = loadingPoint;
         this.unloadingPoint = unloadingPoint;
         this.productType = productType;
@@ -95,10 +79,6 @@ public class Load {
     }
 
     // Setters
-    public void setLoadId(int loadid) {
-        this.loadid = loadid;
-    }
-
     public void setLoadingPoint(String loadingPoint) {
         this.loadingPoint = loadingPoint;
     }
